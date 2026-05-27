@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pancitoduro</title>
+    <title>PancitoDuro</title>
+    <link rel="stylesheet" href="resources/style/index.css">
 </head>
 <body>
     <header>
-        <img src="resources/image/logo.png" alt="logo">
-        <h1>Pancitoduro</h1>
+        <div class="logoContainer">
+            <img src="resources/image/logo.png" alt="logo" class="logo">
+            <h1>PancitoDuro</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -17,34 +20,38 @@
                 <li><a href="ofertas.html">Ofertas</a></li>
             </ul>
         </nav>
-        <div class="btnLogin"><a href="inicio-sesion.html">Iniciar Sesión</a></div>
-        <div class="btnRegister"><a href="registro.html">Registrarse</a></div>
+        <div class="btnContainer">
+            <div class="btnLogin"><a href="login.html">Iniciar Sesión</a></div>
+            <div class="btnRegister"><a href="registrar.html">Registrarse</a></div>
+        </div>
     </header>
     <main>
-        <section class="bienvenida"> <!Bienvenida y descripción>
-            <h2>Bienvenido a Pancitoduro</h2>
-            <p>Nuestra panaderia se enfoca en no desperdiciar la comida, agregamos muchas promociones y descuentos a alimentos antes de vencer.</p>
-            <img src="" alt="">
-        </section>
-        <section> <!Seccion para incentivar a consumir productos antes de vencer>
-            <h3>
-            </h3>
-        </section>
-        <section> <!Carrusel de productos destacados>
-            <h2>Productos Destacados</h2>
-            <article>
-                <h3>Producto 1</h3>
-                <p>Descripción del producto 1</p>
-            </article>
-            <article>
-                <h3>Producto 2</h3>
-                <p>Descripción del producto 2</p>
-            </article>
-            <article>
-                <h3>Producto 3</h3>
-                <p>Descripción del producto 3</p>
-            </article>
-        </section>
+        <div class="mainContainer">
+            <section class="bienvenida"> <!Bienvenida y descripción>
+                <h2>Bienvenido a PancitoDuro</h2>
+                <p>Nuestra panaderia se enfoca en no desperdiciar la comida, agregamos muchas promociones y descuentos a alimentos antes de vencer.</p>
+                <img src="" alt="">
+            </section>
+            <section> <!Seccion para incentivar a consumir productos antes de vencer>
+                <h3>
+                </h3>
+            </section>
+            <section> <!Carrusel de productos destacados>
+                <h2>Productos Destacados</h2>
+                <article>
+                    <h3>Producto 1</h3>
+                    <p>Descripción del producto 1</p>
+                </article>
+                <article>
+                    <h3>Producto 2</h3>
+                    <p>Descripción del producto 2</p>
+                </article>
+                <article>
+                    <h3>Producto 3</h3>
+                    <p>Descripción del producto 3</p>
+                </article>
+            </section>
+        </div>
         <aside>
             <h3>Promociones</h3>
             <article>
@@ -62,28 +69,30 @@
         </aside>
     </main>
     <footer>
-        <div>
-            <p>Encuentranos en: Calle Principal #123, Ciudad, País.</p>
-            <p><a href="https://www.google.com/maps/place/Calle+Principal+%23123,+Ciudad,+Pa%C3%ADs">Ver en Google Maps</a></p>
+        <div class="footerContainer">
+            <div class="ubicacion">
+                <p>Encuentranos en: Calle Principal #123, Ciudad, País.</p>
+                <p><a href="https://www.google.com/maps/place/Calle+Principal+%23123,+Ciudad,+Pa%C3%ADs">Ver en Google Maps</a></p>
+            </div>
+            <div class="contacto">
+                <ul>
+                    <li>Teléfono: (054) 34567890</li>
+                    <li>Correo: correo@pancitoduro.com</li>
+                    <li><a href="https://www.facebook.com/pancitoduro">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/pancitoduro">Instagram</a></li>
+                    <li><a href="https://www.twitter.com/pancitoduro">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="legal">
+                <ul>
+                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="Contacto">
-            <ul>
-                <li>Teléfono: (054) 34567890</li>
-                <li>Correo: correo@pancitoduro.com</li>
-                <li><a href="https://www.facebook.com/pancitoduro">Facebook</a></li>
-                <li><a href="https://www.instagram.com/pancitoduro">Instagram</a></li>
-                <li><a href="https://www.twitter.com/pancitoduro">Twitter</a></li>
-            </ul>
-        </div>
-        <div class="Legal">
-            <ul>
-                <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
-                <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
-                <li><a href="disclaimer.html">Disclaimer</a></li>
-            </ul>
-        </div>
-        <div>
-            <p>&copy; 2026 Pancitoduro. Todos los derechos reservados.</p>
+        <div class="copyright">
+            <p>&copy; 2026 PancitoDuro. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>
