@@ -16,12 +16,15 @@ header a {
     font-weight: bold;
 }
 header{
+    position: sticky;
+    top: 0;
     background-color: #FDFCF0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-bottom: 3px solid #E4E3D7;
     font-family: jakarta, sans-serif;
+    gap: 10%;
 }
 header .logoContainer {
     display: flex;
@@ -56,42 +59,47 @@ header .btnContainer {
     display: block;
 }
 .logo{
-    width: 12vh;
+    width: 100px;
     height: auto;
 }
 /* MAIN */
 main{
     background-color: #FDFCF0;
+
     display: grid;
     grid-template-columns: 1.5fr 0.5fr;
+
     gap: 20px;
-    margin: 20px 30px 20px 30px;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 .mainContainer{
-    min-height: 100vh;
+    min-height: 100vh;    
 }
-.mainContainer, aside{
-    padding: 20px;
-}
-.mainContainer section{
-    background-color: #F8F7E9;
+.mainContainer .bienvenida{
+    border: 2px solid #D5C3B8;
     border-radius: 6px;
-    border: 4px solid #D4C79C;
     padding: 20px;
-    margin-bottom: 20px;
+    font-family: newsreader, serif;
+    color: #7b5800;
+    font-size: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
-.mainContainer article{
-    background-color: #F8F7E9;
+.bienvenida img{
+    width: 300px;
+    height: auto;
+    margin-left: 20px;
     border-radius: 6px;
-    border: 4px solid #D4C79C;
-    padding: 20px;
-    margin-bottom: 20px;
 }
 aside{
     background-color: #FBF4E1;
     border-radius: 6px;
     border: 4px solid #D4C79C;
     height: fit-content;
+    padding: 20px;
 }
 /* FOOTER*/
 footer{
@@ -99,8 +107,9 @@ footer{
 }
 footer .footerContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 10%;
     padding-left: 40px;
     padding-right: 40px;
     font-size: small;
@@ -112,4 +121,8 @@ footer .copyright{
     color: #7b5800;
     font-family: newsreader, serif;
     font-size: small;
+}
+footer a{
+    text-decoration: none;
+    color: #5D4200;
 }
