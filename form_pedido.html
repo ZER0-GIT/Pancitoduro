@@ -3,53 +3,171 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Carrito</title>
+    <title>Formulario Pedido</title>
+    <link rel="stylesheet" href="resources/style/form_pedido.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header style="text-align: center">
-        <h1>Formulario de Pedido</h1>
+    <header>
+        <div class="logoContainer">
+            <img src="resources/image/logo.png" alt="logo" class="logo">
+            <h1>PancitoDuro</h1>
+        </div>
         <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="menu.html">Regresar al Menú</a>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="pedidos.html">Pedido</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+            </ul>
         </nav>
+        <div class="btnContainer">
+            <div class="btnLogin"><a href="login.html">Iniciar Sesión</a></div>
+            <div class="btnRegister"><a href="registrar.html">Registrarse</a></div>
+        </div>
     </header>
     <main>
-        <section>
-            <h2>Detalles de tu entrega</h2>
-            
-            <form action="pedidos.html" method="post">
-                
-                <label for="nombre">Nombre del cliente:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required><br><br>
-
-                <label for="direccion">Dirección de entrega:</label>
-                <input type="text" id="direccion" name="direccion" placeholder="Calle, número y distrito" required><br><br>
-
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 987654321" required><br><br>
-
-                <label>Selección de platos:</label><br>
-                
-                <input type="checkbox" id="plato1" name="platos" value="Menu del dia">
-                <label for="plato1">Menú del día (Rescate)</label><br>
-                
-                <input type="checkbox" id="plato2" name="platos" value="Pack sorpresa">
-                <label for="plato2">Pack Sorpresa Vegetariano</label><br>
-                
-                <input type="checkbox" id="plato3" name="platos" value="Postres">
-                <label for="plato3">Dúo de postres del día</label><br><br>
-
-                <label for="cantidad">Cantidad:</label><br>
-                <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required><br><br>
-
-                
-                <button type="submit">Enviar Pedido</button>
-                <button type="reset">Limpiar formulario</button>
-
+        <section class="pedidoFormularioSection">
+            <div class="pedidoFormularioHeader">
+                <a href="menu.html" class="pedidoFormularioVolver">← Regresar al Menú</a>
+                <h2 class="pedidoFormularioTitulo">
+                    Haz tu Pedido
+                </h2>
+                <p class="pedidoFormularioSubtitulo">
+                    Artesanal, sostenible y directo del horno a tu mesa.
+                </p>
+            </div>
+            <form action="pedidos.html" method="post" class="pedidoFormulario">
+                <div class="pedidoFormularioGrid">
+                    <div class="pedidoFormularioCampo">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div class="pedidoFormularioCampo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 987654321" required>
+                    </div>
+                </div>
+                <div class="pedidoFormularioCampo pedidoFormularioCampoCompleto">
+                    <label for="direccion">Dirección de Entrega</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Calle, número y distrito" required>
+                </div>
+                <div class="pedidoFormularioSeparador"></div>
+                <h3 class="pedidoFormularioProductosTitulo">
+                    Selecciona tus Delicias
+                </h3>
+                <div class="pedidoProductoCard">
+                    <div class="pedidoProductoInfo">
+                        <input type="checkbox" id="producto1" name="productos">
+                        <div class="pedidoProductoTexto">
+                            <label for="producto1" class="pedidoProductoNombre">
+                                Hogaza de Masa Madre
+                            </label>
+                            <p class="pedidoProductoDescripcion">
+                                Recuperado - Horneada esta mañana
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pedidoProductoAcciones">
+                        <span class="pedidoProductoPrecio">
+                            S/. 4.50
+                        </span>
+                        <div class="pedidoProductoCantidad">
+                            <button type="button">−</button>
+                            <input type="number" value="1" min="1">
+                            <button type="button">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pedidoProductoCard">
+                    <div class="pedidoProductoInfo">
+                        <input type="checkbox" id="producto2" name="productos">
+                        <div class="pedidoProductoTexto">
+                            <label for="producto2" class="pedidoProductoNombre">
+                                Pack de 4 Croissants
+                            </label>
+                            <p class="pedidoProductoDescripcion">
+                                Mantequilla artesanal francesa
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pedidoProductoAcciones">
+                        <span class="pedidoProductoPrecio">
+                            S/. 6.20
+                        </span>
+                        <div class="pedidoProductoCantidad">
+                            <button type="button">−</button>
+                            <input type="number" value="1" min="1">
+                            <button type="button">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pedidoProductoCard">
+                    <div class="pedidoProductoInfo">
+                        <input type="checkbox" id="producto3" name="productos">
+                        <div class="pedidoProductoTexto">
+                            <label for="producto3" class="pedidoProductoNombre">
+                                Baguette Tradición
+                            </label>
+                            <p class="pedidoProductoDescripcion">
+                                Harina orgánica de piedra
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pedidoProductoAcciones">
+                        <span class="pedidoProductoPrecio">
+                            S/. 1.80
+                        </span>
+                        <div class="pedidoProductoCantidad">
+                            <button type="button">−</button>
+                            <input type="number" value="1" min="1">
+                            <button type="button">+</button>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="pedidoFormularioBoton">
+                    Enviar Pedido
+                </button>
+                <p class="pedidoFormularioMensaje">
+                    Al realizar el pedido, apoyas nuestra misión de rescate de alimentos.
+                </p>
             </form>
         </section>
     </main>
+    <footer>
+        <div class="footerContainer">
+            <div class="ubicacion">
+                <h3 class="tituloFooter">Contacto</h3>
+                <p>Encuentranos en: Av. Independencia #123, Arequipa, Perú.</p>
+                <p><a href="https://www.google.com/maps/place/Calle+Principal+%23123,+Ciudad,+Pa%C3%ADs">Ver en Google
+                        Maps</a></p>
+            </div>
+            <div class="contacto">
+                <h3 class="tituloFooter">Contacto</h3>
+                <ul>
+                    <li>Teléfono: (054) 34567890</li>
+                    <li>Correo: correo@pancitoduro.com</li>
+                    <li><a href="https://www.facebook.com/pancitoduro">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/pancitoduro">Instagram</a></li>
+                    <li><a href="https://www.twitter.com/pancitoduro">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="legal">
+                <h3 class="tituloFooter">Legal</h3>
+                <ul>
+                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 PancitoDuro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

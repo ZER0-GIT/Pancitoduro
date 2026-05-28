@@ -1,61 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofertas</title>
+    <title>PancitoDuro - Ofertas</title>
+    <link rel="stylesheet" href="resources/style/ofertas.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <h3>Ofertas Especiales</h3>
-    <table>
-        <tr>
-            <th>Producto</th>
-            <th>Descripción</th>
-            <th>Precio Normal</th>
-            <th>Precio Oferta</th>
-            <th>Cantidad</th>
-            <th>Acciones</th>
-        </tr>
-        <tr>
-            <td>Pan de Chocolate</td>
-            <td>Delicioso pan relleno de chocolate</td>
-            <td>$5.00</td>
-            <td>$3.50</td>
-            <td>10</td>
-            <td><a href="form_pedido.html">Comprar</a></td>
-        </tr>
-        <tr>
-            <td>Pan de Queso</td>
-            <td>Suave pan con queso derretido</td>
-            <td>$3.00</td>
-            <td>$2.00</td>
-            <td>15</td>
-            <td><a href="form_pedido.html">Comprar</a></td>
-        </tr>
-        <tr>
-            <td>Pan Integral</td>
-            <td>Pan saludable hecho con harina integral</td>
-            <td>$4.50</td>
-            <td>$3.00</td>
-            <td>20</td>
-            <td><a href="form_pedido.html">Comprar</a></td>
-        </tr>
-        <tr>
-            <td>Pan de Ajo</td>
-            <td>Pan con sabor a ajo, perfecto para acompañar</td>
-            <td>$6.00</td>
-            <td>$4.00</td>
-            <td>12</td>
-            <td><a href="form_pedido.html">Comprar</a></td>
-        </tr>
-        <tr>
-            <td>Pan de Canela</td>
-            <td>Pan dulce con un toque de canela</td>
-            <td>$4.00</td>
-            <td>$2.50</td>
-            <td>18</td>
-            <td><a href="form_pedido.html">Comprar</a></td>
-        </tr>
-    </table>
+    <header>
+        <div class="logoContainer">
+            <img src="resources/image/logo.png" alt="logo" class="logo">
+            <h1>PancitoDuro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="pedidos.html">Pedido</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+            </ul>
+        </nav>
+        <div class="btnContainer">
+            <div class="btnLogin"><a href="login.html">Iniciar Sesión</a></div>
+            <div class="btnRegister"><a href="registrar.html">Registrarse</a></div>
+        </div>
+    </header>
+    <section class="ofertasEspeciales">
+        <h3>Ofertas Especiales</h3>
+
+        <table class="tablaOfertas">
+            <tr>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Precio Normal</th>
+                <th>Precio Oferta</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+
+            <tr>
+                <td>Croissant de almendras</td>
+                <td>Masa hojaldrada con crema de almendras</td>
+                <td>S/. 12.00</td>
+                <td>S/. 8.50</td>
+                <td>10</td>
+                <td class="accionCarrito">
+                    <a href="form_pedido.html">
+                        <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Pan de masa madre</td>
+                <td>Fermentación natural y corteza crocante</td>
+                <td>S/. 15.00</td>
+                <td>S/. 10.00</td>
+                <td>8</td>
+                <td class="accionCarrito">
+                    <a href="form_pedido.html">
+                        <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Rollos de canela</td>
+                <td>Canela premium con glaseado artesanal</td>
+                <td>S/. 11.00</td>
+                <td>S/. 7.50</td>
+                <td>15</td>
+                <td class="accionCarrito">
+                    <a href="form_pedido.html">
+                        <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Ciabatta italiana</td>
+                <td>Pan artesanal con aceite de oliva</td>
+                <td>S/. 14.00</td>
+                <td>S/. 9.00</td>
+                <td>12</td>
+                <td class="accionCarrito">
+                    <a href="form_pedido.html">
+                        <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Brioche premium</td>
+                <td>Pan suave con mantequilla y leche fresca</td>
+                <td>S/. 18.00</td>
+                <td>S/. 13.00</td>
+                <td>6</td>
+                <td class="accionCarrito">
+                    <a href="form_pedido.html">
+                        <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <footer>
+        <div class="footerContainer">
+            <div class="ubicacion">
+                <h3 class="tituloFooter">Contacto</h3>
+                <p>Encuentranos en: Av. Independencia #123, Arequipa, Perú.</p>
+                <p><a href="https://www.google.com/maps/place/Calle+Principal+%23123,+Ciudad,+Pa%C3%ADs">Ver en Google
+                        Maps</a></p>
+            </div>
+            <div class="contacto">
+                <h3 class="tituloFooter">Contacto</h3>
+                <ul>
+                    <li>Teléfono: (054) 34567890</li>
+                    <li>Correo: correo@pancitoduro.com</li>
+                    <li><a href="https://www.facebook.com/pancitoduro">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/pancitoduro">Instagram</a></li>
+                    <li><a href="https://www.twitter.com/pancitoduro">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="legal">
+                <h3 class="tituloFooter">Legal</h3>
+                <ul>
+                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 PancitoDuro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

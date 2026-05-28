@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PancitoDuro</title>
     <link rel="stylesheet" href="resources/style/index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="logoContainer">
@@ -16,7 +21,7 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="menu.html">Menu</a></li>
-                <li><a href="pedido.html">Pedido</a></li>
+                <li><a href="pedidos.html">Pedido</a></li>
                 <li><a href="ofertas.html">Ofertas</a></li>
             </ul>
         </nav>
@@ -27,56 +32,101 @@
     </header>
     <main>
         <div class="mainContainer">
-            <section class="bienvenida"> <!Bienvenida y descripción>
-                <div class="bienvienidaText">  
-                    <h2>Bienvenido a PancitoDuro</h2>
-                    <p>Nuestra panaderia se enfoca en no desperdiciar la comida, agregamos muchas promociones y descuentos a alimentos antes de vencer.</p>
+            <section class="bienvenida">
+                <!Bienvenida y descripción>
+                    <div class="bienvienidaText">
+                        <h2 class="bienvenidaTitulo1">Horneado con corazon,</h2>
+                        <h2 class="bienvenidaTitulo2">Rescatado con propósito.</h2>
+                        <p>Bienvenidos a PancitoDuro, somos una panaderia artesanal con las mejores variedades de
+                            productos. Estamos comprometidos a la lucha contra el desperdicio de comida.</p>
+                        <p>Ofrecemos las mejores ofertas de rescate de comida antes de ser desperdiciada.</p>
+                        <a href="ofertas.html"><button class="bienvenidaBtnRescate">Ofertas de rescate</button></a>
+                    </div>
+                    <img src="resources/image/pan_bienvenida.png" alt="imagen_pan">
+            </section>
+            <section>
+                <!Seccion para incentivar a consumir productos antes de vencer>
+                    <h3>
+                    </h3>
+            </section>
+            <section class="inicioCarruselProductos">
+                <div class="inicioCarruselHeader">
+                    <h2 class="inicioCarruselTitulo">Favoritos del Horno</h2>
+                    <a href="menu.html" class="inicioCarruselLinkMenu">Ver todo el menú →</a>
                 </div>
-                <img src="resources/image/pan_bienvenida.png" alt="imagen_pan">
-            </section>
-            <section> <!Seccion para incentivar a consumir productos antes de vencer>
-                <h3>
-                </h3>
-            </section>
-            <section> <!Carrusel de productos destacados>
-                <h2>Productos Destacados</h2>
-                <article>
-                    <h3>Producto 1</h3>
-                    <p>Descripción del producto 1</p>
-                </article>
-                <article>
-                    <h3>Producto 2</h3>
-                    <p>Descripción del producto 2</p>
-                </article>
-                <article>
-                    <h3>Producto 3</h3>
-                    <p>Descripción del producto 3</p>
-                </article>
+                <div class="inicioCarruselGrid">
+                    <article class="inicioCarruselCard">
+                        <img src="resources/image/productos/productoRecomendado2.png" alt="Croissant" class="inicioCarruselImagen">
+                        <div class="inicioCarruselContenido">
+                            <div class="inicioCarruselTituloPrecio">
+                                <h3 class="inicioCarruselNombreProducto">Croissant de ayer</h3>
+                                <span class="inicioCarruselPrecio">S/. 1.50</span>
+                            </div>
+                            <p class="inicioCarruselDescripcion">Ideal para tostar o hacer sándwiches.</p>
+                        </div>
+                    </article>
+                    <article class="inicioCarruselCard">
+                        <img src="resources/image/productos/productoRecomendado1.png" alt="Pan centeno"
+                            class="inicioCarruselImagen">
+                        <div class="inicioCarruselContenido">
+                            <div class="inicioCarruselTituloPrecio">
+                                <h3 class="inicioCarruselNombreProducto">Hogaza de Centeno</h3>
+                                <span class="inicioCarruselPrecio">S/. 5.00</span>
+                            </div>
+                            <p class="inicioCarruselDescripcion">Pan denso y nutritivo con harinas locales.</p>
+                        </div>
+                    </article>
+                </div>
             </section>
         </div>
-        <aside>
-            <h3>Promociones</h3>
-            <article>
-                <h4>Promoción 1</h4>
-                <p>Descripción de la promoción 1</p>
+        <aside class="ofertas">
+            <h3 class="tituloAside">Ofertas de Rescate</h3>
+            <article class="productoOferta">
+                <img class="productoImagen" src="resources/image/productos/productoOferta1.png" alt="Panes variados">
+                <div class="productoInfo">
+                    <h4 class="productoTitulo">Panes comunes variados</h4>
+                    <p class="productoDescripcion">3 piezas</p>
+                    <div class="productoPrecios">
+                        <span class="precioOferta">S/. 0.70</span>
+                        <span class="precioNormal">S/. 1.00</span>
+                    </div>
+                </div>
             </article>
-            <article>
-                <h4>Promoción 2</h4>
-                <p>Descripción de la promoción 2</p>
+            <article class="productoOferta">
+                <img class="productoImagen" src="resources/image/productos/productoOferta3.png" alt="Pan de ajonjolí">
+                <div class="productoInfo">
+                    <h4 class="productoTitulo">Pan de Ajonjolí</h4>
+                    <p class="productoDescripcion">200 gramos</p>
+                    <div class="productoPrecios">
+                        <span class="precioOferta">S/. 3.00</span>
+                        <span class="precioNormal">S/. 4.00</span>
+                    </div>
+                </div>
             </article>
-            <article>
-                <h4>Promoción 3</h4>
-                <p>Descripción de la promoción 3</p>
+            <article class="productoOferta">
+                <img class="productoImagen" src="resources/image/productos/productoOferta4.png" alt="Pan con queso">
+                <div class="productoInfo">
+                    <h4 class="productoTitulo">Pan con queso horneado</h4>
+                    <p class="productoDescripcion">4 piezas</p>
+                    <div class="productoPrecios">
+                        <span class="precioOferta">S/. 1.50</span>
+                        <span class="precioNormal">S/. 2.00</span>
+                    </div>
+                </div>
             </article>
+            <a href="ofertas.html" class="asideBtnOfertas">Ver Ofertas</a>
         </aside>
     </main>
     <footer>
         <div class="footerContainer">
             <div class="ubicacion">
-                <p>Encuentranos en: Calle Principal #123, Ciudad, País.</p>
-                <p><a href="https://www.google.com/maps/place/Calle+Principal+%23123,+Ciudad,+Pa%C3%ADs">Ver en Google Maps</a></p>
+                <h3 class="tituloFooter">Contacto</h3>
+                <p>Encuentranos en: Av. Independencia #123, Arequipa, Perú.</p>
+                <p><a href="https://www.google.com/maps/place/Calle+Principal+%23123,+Ciudad,+Pa%C3%ADs">Ver en Google
+                        Maps</a></p>
             </div>
             <div class="contacto">
+                <h3 class="tituloFooter">Contacto</h3>
                 <ul>
                     <li>Teléfono: (054) 34567890</li>
                     <li>Correo: correo@pancitoduro.com</li>
@@ -86,6 +136,7 @@
                 </ul>
             </div>
             <div class="legal">
+                <h3 class="tituloFooter">Legal</h3>
                 <ul>
                     <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
                     <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
@@ -98,4 +149,5 @@
         </div>
     </footer>
 </body>
+
 </html>

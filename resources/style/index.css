@@ -5,7 +5,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #FDFCF0;
 
-    /* layout con grid*/
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
@@ -88,12 +87,123 @@ main{
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+
+.bienvenida p{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #51443C;     
+}
+.bienvenidaBtnRescate{
+    background-color: #FFC95F;
+    color: #755400;
+    font-size: larger;
+    padding: 5px;
+    border: 5px solid #FFC95F;
+    border-radius: 20px;
+}
+.bienvenidaTitulo1{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: #6F4627;
+}
+.bienvenidaTitulo2{
+    font-family: "Newsreader", serif;
+    color: #7C5800;
+}
+
 .bienvenida img{
     width: 300px;
     height: auto;
     margin-left: 20px;
     border-radius: 6px;
 }
+/*CARRUSEL PRODUCTOS*/
+.inicioCarruselProductos{
+    margin-top: 40px;
+}
+
+.inicioCarruselHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.inicioCarruselTitulo{
+    font-family: newsreader, serif;
+    color: #7b5800;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.inicioCarruselLinkMenu{
+    text-decoration: none;
+    color: #9b6a00;
+    font-size: 1.2rem;
+    font-family: jakarta, sans-serif;
+    transition: 0.3s;
+}
+
+.inicioCarruselLinkMenu:hover{
+    color: #7b5800;
+}
+
+.inicioCarruselGrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.inicioCarruselCard{
+    background-color: #FDFCF0;
+    border: 2px solid #D5C3B8;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.inicioCarruselCard:hover{
+    transform: translateY(-5px);
+}
+
+.inicioCarruselImagen{
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.inicioCarruselContenido{
+    padding: 30px;
+}
+
+.inicioCarruselTituloPrecio{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.inicioCarruselNombreProducto{
+    font-family: newsreader, serif;
+    color: #7b5800;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.inicioCarruselPrecio{
+    color: #9b6a00;
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.inicioCarruselDescripcion{
+    margin-top: 20px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #444;
+    font-family: jakarta, sans-serif;
+}
+/*ASIDE OFERTA*/
 aside{
     background-color: #FBF4E1;
     border-radius: 6px;
@@ -101,9 +211,91 @@ aside{
     height: fit-content;
     padding: 20px;
 }
+.ofertas{
+    width: 420px;
+    padding: 20px;
+    background-color: #F5F0E6;
+    border-radius: 15px;
+}
+
+.tituloAside{
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #7C5800;
+}
+
+.productoOferta{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px;
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+}
+
+.productoImagen{
+    width: 120px;
+    height: 120px;
+
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.productoInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.productoTitulo{
+    margin: 0;
+    font-size: 24px;
+    color: #1B1C15;
+}
+
+.productoDescripcion{
+    margin: 8px 0;
+    color: #51443C;
+    font-size: 18px;
+}
+
+.productoPrecios{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.precioOferta{
+    font-size: 32px;
+    font-weight: bold;
+    color: #7C5800;
+}
+
+.precioNormal{
+    font-size: 22px;
+    color: #83736B;
+    text-decoration: line-through;
+}
+.asideBtnOfertas{
+    display: inline-block;
+    background-color: #B98661;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.asideBtnOfertas:hover{
+    background-color: #9e6f4e;
+}
 /* FOOTER*/
 footer{
     background: #EFEFE3;
+    color: #71675E;
 }
 footer .footerContainer{
     display: flex;
@@ -115,14 +307,16 @@ footer .footerContainer{
     font-size: small;
 }
 
+footer .tituloFooter{
+    color: #6F4627;
+}
 footer .copyright{
     display: flex;
     justify-content: center;
-    color: #7b5800;
     font-family: newsreader, serif;
     font-size: small;
 }
 footer a{
     text-decoration: none;
-    color: #5D4200;
+    color: #B78922;
 }

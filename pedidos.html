@@ -1,63 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PancitoDuro - Predidos</title>
+    <link rel="stylesheet" href="resources/style/pedidos.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+        rel="stylesheet">
 </head>
 <body>
+    <header>
+        <div class="logoContainer">
+            <img src="resources/image/logo.png" alt="logo" class="logo">
+            <h1>PancitoDuro</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="pedidos.html">Pedido</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+            </ul>
+        </nav>
+        <div class="btnContainer">
+            <div class="btnLogin"><a href="login.html">Iniciar Sesión</a></div>
+            <div class="btnRegister"><a href="registrar.html">Registrarse</a></div>
+        </div>
+    </header>
     <main>
-        <h2>Pedidos Realizados</h2>
-        <table>
-            <tr>
-                <th>N° Pedido</th>
-                <th>Cliente</th>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-                <th>Estado</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Juan Perez</td>
-                <td>Pan de Chocolate</td>
-                <td>2</td>
-                <td>$5.00</td>
-                <td>En proceso</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Maria Lopez</td>
-                <td>Pan de Queso</td>
-                <td>1</td>
-                <td>$3.00</td>
-                <td>Entregado</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Carlos Garcia</td>
-                <td>Pan Integral</td>
-                <td>3</td>
-                <td>$4.50</td>
-                <td>En proceso</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Ana Martinez</td>
-                <td>Pan de Ajo</td>
-                <td>2</td>
-                <td>$6.00</td>
-                <td>Entregado</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Pedro Sanchez</td>
-                <td>Pan de Canela</td>
-                <td>1</td>
-                <td>$4.00</td>
-                <td>En proceso</td>
-            </tr>
-        </table>
+        <section class="pedidosRealizados">
+            <h2>Pedidos Realizados</h2>
+            <table class="tablaPedidos">
+                <tr>
+                    <th>N° Pedido</th>
+                    <th>Cliente</th>
+                    <th>Productos</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                </tr>
+                <tr>
+                    <td>#001</td>
+                    <td>Juan Pérez</td>
+                    <td>
+                        2x Croissant artesanal <br>
+                        1x Café americano <br>
+                        3x Pan de masa madre
+                    </td>
+                    <td>S/. 34.50</td>
+                    <td>
+                        <span class="estadoProceso">
+                            En proceso
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#002</td>
+                    <td>María López</td>
+                    <td>
+                        1x Brioche premium <br>
+                        2x Chocolate caliente
+                    </td>
+                    <td>S/. 32.00</td>
+                    <td>
+                        <span class="estadoEntregado">
+                            Entregado
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#003</td>
+                    <td>Carlos García</td>
+                    <td>
+                        2x Focaccia italiana <br>
+                        1x Té de frutos rojos <br>
+                        4x Rollos de canela
+                    </td>
+                    <td>S/. 58.00</td>
+                    <td>
+                        <span class="estadoProceso">
+                            En proceso
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#004</td>
+                    <td>Ana Martínez</td>
+                    <td>
+                        1x Pretzel alemán <br>
+                        2x Café americano
+                    </td>
+                    <td>S/. 17.00</td>
+                    <td>
+                        <span class="estadoEntregado">
+                            Entregado
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#005</td>
+                    <td>Pedro Sánchez</td>
+                    <td>
+                        3x Pan de masa madre <br>
+                        2x Ciabatta rústica
+                    </td>
+                    <td>S/. 72.00</td>
+                    <td>
+                        <span class="estadoProceso">
+                            En proceso
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </section>
     </main>
+    <footer>
+        <div class="footerContainer">
+            <div class="ubicacion">
+                <h3 class="tituloFooter">Contacto</h3>
+                <p>Encuentranos en: Av. Independencia #123, Arequipa, Perú.</p>
+                <p><a href="https://www.google.com/maps/place/Calle+Principal+%23123,+Ciudad,+Pa%C3%ADs">Ver en Google
+                        Maps</a></p>
+            </div>
+            <div class="contacto">
+                <h3 class="tituloFooter">Contacto</h3>
+                <ul>
+                    <li>Teléfono: (054) 34567890</li>
+                    <li>Correo: correo@pancitoduro.com</li>
+                    <li><a href="https://www.facebook.com/pancitoduro">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/pancitoduro">Instagram</a></li>
+                    <li><a href="https://www.twitter.com/pancitoduro">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="legal">
+                <h3 class="tituloFooter">Legal</h3>
+                <ul>
+                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 PancitoDuro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
+
 </html>
