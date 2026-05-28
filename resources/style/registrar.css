@@ -1,0 +1,147 @@
+.registro-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fdfbf1 0%, #f5e6c4 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 70px;
+    height: auto;
+}
+
+header h1 {
+    color: #5c4033;
+    font-family: 'Georgia', serif;
+    font-size: 2.2em;
+    margin: 10px 0 5px 0;
+}
+
+.linetag {
+    color: #8d6e63;
+    font-style: italic;
+    font-size: 0.95em;
+    margin: 0;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(92, 64, 51, 0.06);
+    width: 100%;
+    max-width: 400px; /* Un poquito más ancho para comodidad de los textos */
+    box-sizing: border-box;
+}
+
+.form-container h3 {
+    color: #333333;
+    font-size: 1.6em;
+    text-align: center;
+    margin: 0 0 8px 0;
+}
+
+.form-container p {
+    color: #666666;
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0 0 25px 0;
+}
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444444;
+    font-size: 0.85em;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px; /* Separación uniforme */
+}
+
+.input-group .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a19c95;
+    font-size: 1.05em;
+    pointer-events: none;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 11px 15px 11px 42px; /* Espacio para el ícono */
+    border: 1px solid #e6e1da;
+    border-radius: 8px;
+    background-color: #fcfcf9;
+    font-size: 0.95em;
+    box-sizing: border-box;
+}
+
+.terminos-container {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+form input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+    vertical-align: middle;
+}
+
+form input[type="checkbox"] + label {
+    display: inline;
+    font-weight: normal;
+    color: #555555;
+    font-size: 0.85em;
+    vertical-align: middle;
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    background-color: #ffcc66;
+    color: #5c4033;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.2s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #f7bd4f;
+}
+
+form p {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #333333;
+}
+
+form p a {
+    color: #8d6e63;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form p a:hover {
+    text-decoration: underline;
+}

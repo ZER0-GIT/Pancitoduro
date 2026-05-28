@@ -1,27 +1,44 @@
 <!doctype html>
 <html lans="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Inico</title>
-  </head>
-  <body>
-    <header style="text-align: center">
-      <h1>Pancito Duro</h1>
-    </header>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Inico</title>
+  <link rel="stylesheet" href="resources/style/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="login-body">
+  <header>
+    <img src="resources/image/logo.png" alt="logo">
+    <h1>Pancitoduro</h1>
+    <p class="linetag">Horneado con corazón, rescatado con propósito</p>
+  </header>
+  <div class="form-container">
+    <h3>Bienvenido de Vuelta</h3>
+    <p>Ingresa a tu cuenta de artesano</p>
+
     <form action="index.html" method="post">
-      <fieldset>
-        <legend><h3>Iniciar sesión</h3></legend>
-        <label>Usuario</label>
-        <input type="text" id="Usuario" name="Usuario" required /> <br /><br />
+      <label for="Usuario">Usuario</label>
+      <div class="input-group">
+        <i class="fa-solid fa-user icon"></i>
+        <input type="text" id="Usuario" name="Usuario" placeholder="Nombre de Usuario" required />
+      </div>
 
-        <label>Contarseña</label>
-        <input type="text" id="Contraseña" name="Contraseña" requiered />
-        <br /><br />
+      <label for="Contraseña">Contraseña</label>
+      <div class="input-group">
+        <i class="fa-solid fa-lock icon"></i>
+        <input type="password" id="Contraseña" name="Contraseña" required />
+      </div>
+      
+      <input type="checkbox" id="mensaje" name="mensaje" />
+      <label> Recordarme en este dispositivo</label> 
 
-        <a href="registrar.html">Nuevo Usuario</a> <br /><br />
+      <button type="submit">Ingresar</button> 
 
-        <button type="submit">Ingresar</button>
-      </fieldset>
+      <a href="registrar.html">Nuevo Usuario</a> 
     </form>
-  </body>
+  </div>
+</body>
+
 </html>

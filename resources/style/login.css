@@ -1,0 +1,140 @@
+.login-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fdfbf1 0%, #f5e6c4 100%); /* Degradado suave crema */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header img {
+    width: 70px; /* Tamaño del logo de pan */
+    height: auto;
+}
+
+header h1 {
+    color: #5c4033; /* Marrón oscuro artesanal */
+    font-family: 'Georgia', serif;
+    font-size: 2.2em;
+    margin: 10px 0 5px 0;
+}
+
+.linetag {
+    color: #8d6e63;
+    font-style: italic;
+    font-size: 0.95em;
+    margin: 0;
+}
+.form-container {
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(92, 64, 51, 0.08); /* Sombra suave trasera */
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+}
+
+.form-container h3 {
+    color: #333333;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0 0 8px 0;
+}
+
+.form-container p {
+    color: #666666;
+    font-size: 0.9em;
+    text-align: center;
+    margin: 0 0 25px 0;
+}
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444444;
+    font-size: 0.9em;
+}
+
+/* Contenedor relativo para posicionar el ícono dentro */
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px; /* Controla la separación sin usar <br> */
+}
+
+/* El ícono flotante */
+.input-group .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a19c95;
+    font-size: 1.1em;
+    pointer-events: none;
+}
+
+/* El cuadro de texto */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px 12px 42px; /* 42px a la izquierda para no tapar el ícono */
+    border: 1px solid #e6e1da;
+    border-radius: 8px;
+    background-color: #fcfcf9;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+form input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+    vertical-align: middle;
+}
+
+form input[type="checkbox"] + label {
+    display: inline; /* Se alinea al lado del cuadro */
+    font-weight: normal;
+    color: #666666;
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+form button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #ffcc66; /* Amarillo/Dorado de tu muestra */
+    color: #5c4033;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #f7bd4f;
+}
+
+form a {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #8d6e63;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
