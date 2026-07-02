@@ -1,27 +1,70 @@
+/* ESTRUCTURA GLOBAL CON CSS GRID (Para toda la página)*/
 .login-body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #fdfbf1 0%, #f5e6c4 100%); /* Degradado suave crema */
+    background: linear-gradient(135deg, #fdfbf1 0%, #f5e6c4 100%);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+
+    /* Requerimiento de la ingeniera: Grid global de 3 filas */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     justify-content: center;
-    align-items: center;
+    align-content: space-between;
+    /* Empuja el footer firmemente al fondo */
+    position: relative;
+    /* Clave para posicionar la abejita con libertad */
+    overflow-x: hidden;
 }
 
+/* ANIMACIÓN DE LA ABEJITA VOLADORA (Efecto sutil de flotación) */
+.abeja-animada {
+    position: fixed;
+    /* Cambiado a fixed para que flote respecto a la pantalla del monitor */
+    top: 35%;
+    /* Altura media de la pantalla */
+    left: 8%;
+    /* Separada elegantemente del borde izquierdo */
+    font-size: 3.5em;
+    /* Más grande para que la notes al instante */
+    z-index: 100;
+    /* Obliga al ícono a estar por encima de cualquier capa de fondo */
+    pointer-events: none;
+
+    /* Tu hermosa animación */
+    animation: volarAbeja 4s ease-in-out infinite;
+}
+
+/* Ajustamos la animación para que cambie a dorado cuando vuele */
+@keyframes volarAbeja {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(15deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/*ENCABEZADO (LOGO Y TÍTULO)*/
 header {
     text-align: center;
-    margin-bottom: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 header img {
-    width: 70px; /* Tamaño del logo de pan */
+    width: 70px;
     height: auto;
 }
 
 header h1 {
-    color: #5c4033; /* Marrón oscuro artesanal */
+    color: #5c4033;
+    /* Café artesanal */
     font-family: 'Georgia', serif;
     font-size: 2.2em;
     margin: 10px 0 5px 0;
@@ -33,14 +76,18 @@ header h1 {
     font-size: 0.95em;
     margin: 0;
 }
+
+/* TARJETA BLANCA DE ACCESO (.form-container) */
 .form-container {
     background-color: #ffffff;
     padding: 35px 40px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(92, 64, 51, 0.08); /* Sombra suave trasera */
+    box-shadow: 0 10px 30px rgba(92, 64, 51, 0.08);
     width: 100%;
     max-width: 380px;
     box-sizing: border-box;
+    margin: 0 auto 30px auto;
+    /* Centrado y con margen inferior */
 }
 
 .form-container h3 {
@@ -56,22 +103,27 @@ header h1 {
     text-align: center;
     margin: 0 0 25px 0;
 }
+
+/*INPUTS CON ÍCONOS DENTRO (Grid Interno)*/
+form {
+    display: grid;
+    row-gap: 5px;
+}
+
 form label {
     display: block;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     color: #444444;
     font-size: 0.9em;
 }
 
-/* Contenedor relativo para posicionar el ícono dentro */
 .input-group {
     position: relative;
     width: 100%;
-    margin-bottom: 20px; /* Controla la separación sin usar <br> */
 }
 
-/* El ícono flotante */
 .input-group .icon {
     position: absolute;
     left: 15px;
@@ -82,11 +134,11 @@ form label {
     pointer-events: none;
 }
 
-/* El cuadro de texto */
 .form-container input[type="text"],
 .form-container input[type="password"] {
     width: 100%;
-    padding: 12px 15px 12px 42px; /* 42px a la izquierda para no tapar el ícono */
+    padding: 12px 15px 12px 42px;
+    /* Espacio exacto a la izquierda para el ícono */
     border: 1px solid #e6e1da;
     border-radius: 8px;
     background-color: #fcfcf9;
@@ -94,30 +146,44 @@ form label {
     box-sizing: border-box;
 }
 
-form input[type="checkbox"] {
-    margin-right: 8px;
-    transform: scale(1.1);
-    vertical-align: middle;
+
+/* CHECKBOX Y ENLACES (Corregidos para mantenerse en línea)*/
+.checkbox-inline-block {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
-form input[type="checkbox"] + label {
-    display: inline; /* Se alinea al lado del cuadro */
+form input[type="checkbox"] {
+    margin: 0 10px 0 0;
+    transform: scale(1.15);
+    cursor: pointer;
+    display: inline-block;
+}
+
+form input[type="checkbox"]+label {
+    display: inline-block;
     font-weight: normal;
     color: #666666;
     font-size: 0.9em;
-    vertical-align: middle;
+    margin: 0;
+    /* Limpia márgenes heredados del Grid */
+    cursor: pointer;
 }
+
 form button[type="submit"] {
     width: 100%;
     padding: 14px;
-    background-color: #ffcc66; /* Amarillo/Dorado de tu muestra */
+    background-color: #ffcc66;
+    /* Dorado de la paleta */
     color: #5c4033;
     border: none;
     border-radius: 8px;
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 20px;
     transition: background-color 0.2s;
 }
 
@@ -128,7 +194,7 @@ form button[type="submit"]:hover {
 form a {
     display: block;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
     color: #8d6e63;
     text-decoration: none;
     font-size: 0.9em;
@@ -137,4 +203,79 @@ form a {
 
 form a:hover {
     text-decoration: underline;
+}
+
+/*PIE DE PÁGINA */
+.footer-site {
+    background-color: #f5f1e9;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #edebe6;
+    width: 100vw;
+    /* Toma todo el ancho de pantalla */
+    box-sizing: border-box;
+}
+
+.footer-brand strong {
+    color: #5c4033;
+}
+
+.footer-brand p {
+    font-size: 0.8em;
+    color: #8d6e63;
+    margin: 5px 0 0 0;
+}
+
+.footer-links a {
+    color: #77726a;
+    text-decoration: none;
+    font-size: 0.85em;
+    margin-left: 20px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #5c4033;
+}
+
+
+/*MEDIA QUERIES (Responsivo para Celulares)*/
+
+@media (max-width: 768px) {
+    .abeja-animada {
+        display: none;
+        /* Se oculta en pantallas pequeñas para que no entorpezca la lectura */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-body {
+        padding: 10px 0 0 0;
+        align-content: start;
+        /* Comienza arriba si la pantalla es muy pequeña */
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .form-container {
+        padding: 25px 20px;
+        max-width: 90%;
+        /* Se adapta al ancho de la pantalla móvil sin romperse */
+        border-radius: 12px;
+    }
+
+    .footer-site {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-links a {
+        margin: 0 8px;
+    }
 }

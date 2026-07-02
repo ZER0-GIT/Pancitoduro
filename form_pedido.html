@@ -11,131 +11,139 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="logoContainer">
-            <img src="resources/image/logo.png" alt="logo" class="logo">
+            <img src="resources/image/logo.png" alt="Logo PancitoDuro" class="logo">
             <h1>PancitoDuro</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="menu.html">Menu</a></li>
+                <li><a href="menu.html">Menú</a></li>
                 <li><a href="pedidos.html">Pedido</a></li>
                 <li><a href="ofertas.html">Ofertas</a></li>
             </ul>
         </nav>
         <div class="btnContainer">
-            <div class="btnLogin"><a href="login.html">Iniciar Sesión</a></div>
-            <div class="btnRegister"><a href="registrar.html">Registrarse</a></div>
+            <div class="btnLogin">
+                <a href="login.html">Iniciar sesión</a>
+            </div>
+            <div class="btnRegister">
+                <a href="registrar.html">Registrarse</a>
+            </div>
         </div>
     </header>
-    <main>
-        <section class="pedidoFormularioSection">
-            <div class="pedidoFormularioHeader">
-                <a href="menu.html" class="pedidoFormularioVolver">← Regresar al Menú</a>
-                <h2 class="pedidoFormularioTitulo">
-                    Haz tu Pedido
-                </h2>
-                <p class="pedidoFormularioSubtitulo">
-                    Artesanal, sostenible y directo del horno a tu mesa.
-                </p>
-            </div>
-            <form action="pedidos.html" method="post" class="pedidoFormulario">
-                <div class="pedidoFormularioGrid">
-                    <div class="pedidoFormularioCampo">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-                    </div>
-                    <div class="pedidoFormularioCampo">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 987654321" required>
+    <main class="main-layout">
+        
+        <section class="form-section">
+            <a href="menu.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Regresar al Menú</a>
+            <h2 class="main-title">Haz tu Pedido</h2>
+            <p class="subtitle">Artesanal, sostenible y directo del horno a tu mesa. Completa los detalles a continuación.</p>
+
+            <form action="pedidos.html" method="POST" class="grid-form">
+                
+                <div class="input-field">
+                    <label for="nombre">Nombre Completo</label> 
+                    <div class="input-group">
+                        <i class="fa-solid fa-user icon"></i>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Julian Casablancas" required>
                     </div>
                 </div>
-                <div class="pedidoFormularioCampo pedidoFormularioCampoCompleto">
-                    <label for="direccion">Dirección de Entrega</label>
-                    <input type="text" id="direccion" name="direccion" placeholder="Calle, número y distrito" required>
-                </div>
-                <div class="pedidoFormularioSeparador"></div>
-                <h3 class="pedidoFormularioProductosTitulo">
-                    Selecciona tus Delicias
-                </h3>
-                <div class="pedidoProductoCard">
-                    <div class="pedidoProductoInfo">
-                        <input type="checkbox" id="producto1" name="productos">
-                        <div class="pedidoProductoTexto">
-                            <label for="producto1" class="pedidoProductoNombre">
-                                Hogaza de Masa Madre
-                            </label>
-                            <p class="pedidoProductoDescripcion">
-                                Recuperado - Horneada esta mañana
-                            </p>
-                        </div>
-                    </div>
-                    <div class="pedidoProductoAcciones">
-                        <span class="pedidoProductoPrecio">
-                            S/. 4.50
-                        </span>
-                        <div class="pedidoProductoCantidad">
-                            <button type="button">−</button>
-                            <input type="number" value="1" min="1">
-                            <button type="button">+</button>
-                        </div>
+
+                <div class="input-field">
+                    <label for="telefono">Teléfono</label> 
+                    <div class="input-group">
+                        <i class="fa-solid fa-phone icon"></i>
+                        <input type="text" id="telefono" name="telefono" placeholder="999 999 999" required>
                     </div>
                 </div>
-                <div class="pedidoProductoCard">
-                    <div class="pedidoProductoInfo">
-                        <input type="checkbox" id="producto2" name="productos">
-                        <div class="pedidoProductoTexto">
-                            <label for="producto2" class="pedidoProductoNombre">
-                                Pack de 4 Croissants
-                            </label>
-                            <p class="pedidoProductoDescripcion">
-                                Mantequilla artesanal francesa
-                            </p>
-                        </div>
-                    </div>
-                    <div class="pedidoProductoAcciones">
-                        <span class="pedidoProductoPrecio">
-                            S/. 6.20
-                        </span>
-                        <div class="pedidoProductoCantidad">
-                            <button type="button">−</button>
-                            <input type="number" value="1" min="1">
-                            <button type="button">+</button>
-                        </div>
+
+                <div class="input-field full-width">
+                    <label for="direccion">Dirección de Entrega</label> 
+                    <div class="input-group">
+                        <i class="fa-solid fa-location-dot icon"></i>
+                        <input type="text" id="direccion" name="direccion" placeholder="Calle del Panadero, 12, 3°B" required>
                     </div>
                 </div>
-                <div class="pedidoProductoCard">
-                    <div class="pedidoProductoInfo">
-                        <input type="checkbox" id="producto3" name="productos">
-                        <div class="pedidoProductoTexto">
-                            <label for="producto3" class="pedidoProductoNombre">
-                                Baguette Tradición
-                            </label>
-                            <p class="pedidoProductoDescripcion">
-                                Harina orgánica de piedra
-                            </p>
-                        </div>
+
+                <div class="delicias-section full-width">
+                    <span class="section-label">Selecciona tus Delicias</span> 
+                    
+                    <div class="checkbox-card">
+                        <input type="checkbox" id="plato1" name="platos" value="Hogaza de Masa Madre">
+                        <label for="plato1">
+                            <span class="plato-name">Hogaza de Masa Madre</span>
+                            <span class="plato-desc">Recuperado - Hornada de las 06:00</span>
+                        </label>
+                        <span class="plato-price">s/.18.50</span>
                     </div>
-                    <div class="pedidoProductoAcciones">
-                        <span class="pedidoProductoPrecio">
-                            S/. 1.80
-                        </span>
-                        <div class="pedidoProductoCantidad">
-                            <button type="button">−</button>
-                            <input type="number" value="1" min="1">
-                            <button type="button">+</button>
-                        </div>
+
+                    <div class="checkbox-card">
+                        <input type="checkbox" id="plato2" name="platos" value="Pack de 4 Croissants">
+                        <label for="plato2">
+                            <span class="plato-name">Pack de 4 Croissants</span>
+                            <span class="plato-desc">Mantequilla de Normandía</span>
+                        </label>
+                        <span class="plato-price">s/.16.20</span>
+                    </div>
+
+                    <div class="checkbox-card">
+                        <input type="checkbox" id="plato3" name="platos" value="Baguette Tradición">
+                        <label for="plato3">
+                            <span class="plato-name">Baguette Tradición</span>
+                            <span class="plato-desc">Harina de piedra orgánica</span>
+                        </label>
+                        <span class="plato-price">s/.04.80</span>
                     </div>
                 </div>
-                <button type="submit" class="pedidoFormularioBoton">
-                    Enviar Pedido
+
+                <div class="input-field">
+                    <label for="cantidad">Cantidad Total</label> 
+                    <div class="quantity-counter">
+                        <input type="number" id="cantidad" name="cantidad" value="1" min="1" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn full-width"> 
+                    <i class="fa-solid fa-paper-plane"></i> Enviar Pedido
                 </button>
-                <p class="pedidoFormularioMensaje">
-                    Al realizar el pedido, apoyas nuestra misión de rescate de alimentos.
-                </p>
+                
+                <p class="form-footer-text full-width">Al realizar el pedido, apoyas nuestra misión de rescate de alimentos.</p> 
             </form>
         </section>
+
+        <aside class="info-sidebar">
+            <div class="card card-promo">
+                <img src="resources/image/logo.png" alt="Pan Horneado" class="card-img">
+                <div class="card-body">
+                    <span class="badge">RECIÉN HORNEADO</span>
+                    <h3>Nuestra Promesa</h3>
+                    <p>Cada pieza seleccionada hoy ha sido horneada con harinas de proximidad y procesos de fermentación lenta de 24 horas.</p>
+                </div>
+            </div>
+
+            <div class="card card-status">
+                <div class="status-header">
+                    <span>NIVEL DE FRESCURA</span>
+                    <span class="status-highlight">Excelente</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="status-desc">Tu pedido será preparado con productos horneados hace menos de 4 horas.</p>
+            </div>
+
+            <div class="card card-impact">
+                <div class="impact-content">
+                    <div class="impact-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="impact-text">
+                        <h4>Impacto de tu Pedido</h4>
+                        <p>Al elegir PancitoDuro, hoy estás rescatando aproximadamente 0.8kg de pan artesanal del desperdicio alimentario.</p> 
+                    </div>
+                </div>
+            </div>
+        </aside>
+
     </main>
     <footer>
         <div class="footerContainer">

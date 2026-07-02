@@ -1,17 +1,23 @@
+/*  ESTRUCTURA GLOBAL CON CSS GRID */
 .registro-body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #fdfbf1 0%, #f5e6c4 100%);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     justify-content: center;
-    align-items: center;
+    align-content: space-between; 
+    overflow-x: hidden;
 }
+
+/* ENCABEZADO (LOGO Y TÍTULO) */
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
 }
 
 header img {
@@ -33,19 +39,21 @@ header h1 {
     margin: 0;
 }
 
+/* TARJETA BLANCA DE REGISTRO */
 .form-container {
     background-color: #ffffff;
     padding: 30px 40px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(92, 64, 51, 0.06);
+    box-shadow: 0 10px 30px rgba(92, 64, 51, 0.08);
     width: 100%;
-    max-width: 400px; /* Un poquito más ancho para comodidad de los textos */
+    max-width: 420px; 
     box-sizing: border-box;
+    margin: 0 auto 30px auto;
 }
 
 .form-container h3 {
     color: #333333;
-    font-size: 1.6em;
+    font-size: 1.5em;
     text-align: center;
     margin: 0 0 8px 0;
 }
@@ -54,66 +62,94 @@ header h1 {
     color: #666666;
     font-size: 0.9em;
     text-align: center;
-    margin: 0 0 25px 0;
+    margin: 0 0 20px 0;
 }
+
+/*  FORMULARIO E INPUTS CON ÍCONOS ENCHUFADOS DENTRO*/
+form {
+    display: grid;
+    row-gap: 5px;
+}
+
 form label {
     display: block;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     color: #444444;
     font-size: 0.85em;
 }
 
+/* Contenedor relativo: Clave para que el ícono se alinee dentro */
 .input-group {
     position: relative;
     width: 100%;
-    margin-bottom: 15px; /* Separación uniforme */
 }
 
+/* Estilo del ícono posicionado absolutamente dentro del input */
 .input-group .icon {
     position: absolute;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
     color: #a19c95;
-    font-size: 1.05em;
-    pointer-events: none;
+    font-size: 1.1em;
+    pointer-events: none; /* Evita que interfiera al hacer clic en la caja */
 }
 
 .form-container input[type="text"],
 .form-container input[type="email"],
 .form-container input[type="password"] {
     width: 100%;
-    padding: 11px 15px 11px 42px; /* Espacio para el ícono */
+    padding: 12px 15px 12px 42px; /* 42px a la izquierda para dejarle espacio al ícono */
     border: 1px solid #e6e1da;
     border-radius: 8px;
     background-color: #fcfcf9;
     font-size: 0.95em;
     box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
-.terminos-container {
-    margin-top: 5px;
-    margin-bottom: 20px;
+.form-container input:focus {
+    border-color: #f7bd4f;
+}
+
+/* Limpieza de saltos de línea innecesarios */
+form input + br,
+form label + br,
+.input-group + br {
+    display: none;
+}
+
+/* CASILLA DE TÉRMINOS Y CONDICIONES (Fijado en línea)*/
+.checkbox-inline-block {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 form input[type="checkbox"] {
-    margin-right: 8px;
-    transform: scale(1.1);
-    vertical-align: middle;
+    margin: 0 10px 0 0;
+    transform: scale(1.15);
+    cursor: pointer;
+    display: inline-block;
 }
 
-form input[type="checkbox"] + label {
-    display: inline;
+form .checkbox-inline-block label {
+    display: inline-block;
     font-weight: normal;
     color: #555555;
     font-size: 0.85em;
-    vertical-align: middle;
+    margin: 0;
+    cursor: pointer;
 }
 
+/* Botón de registrar */
 form button[type="submit"] {
     width: 100%;
-    padding: 13px;
+    padding: 14px;
     background-color: #ffcc66;
     color: #5c4033;
     border: none;
@@ -121,7 +157,7 @@ form button[type="submit"] {
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: 15px;
     transition: background-color 0.2s;
 }
 
@@ -131,17 +167,81 @@ form button[type="submit"]:hover {
 
 form p {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
     font-size: 0.9em;
-    color: #333333;
+    color: #666666;
 }
 
 form p a {
     color: #8d6e63;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    margin-left: 5px;
 }
 
 form p a:hover {
     text-decoration: underline;
+}
+
+/*PIE DE PÁGINA (Footer)*/
+.footer-site {
+    background-color: #f5f1e9;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #edebe6;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.footer-brand strong {
+    color: #5c4033;
+}
+
+.footer-brand p {
+    font-size: 0.8em;
+    color: #8d6e63;
+    margin: 5px 0 0 0;
+}
+
+.footer-links a {
+    color: #77726a;
+    text-decoration: none;
+    font-size: 0.85em;
+    margin-left: 20px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: #5c4033;
+}
+
+/*  MEDIA QUERIES */
+@media (max-width: 480px) {
+    .registro-body {
+        padding-top: 10px;
+        align-content: start;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .form-container {
+        padding: 25px 20px;
+        max-width: 92%;
+        border-radius: 12px;
+    }
+
+    .footer-site {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-links a {
+        margin: 0 8px;
+    }
 }
