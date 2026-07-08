@@ -49,6 +49,8 @@ header h1 {
     max-width: 420px; 
     box-sizing: border-box;
     margin: 0 auto 30px auto;
+    height: max-content;  /* Fuerza a la tarjeta a medir solo lo que mida su contenido */
+    align-self: center;
 }
 
 .form-container h3 {

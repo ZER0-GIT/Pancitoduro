@@ -80,14 +80,15 @@ header h1 {
 /* TARJETA BLANCA DE ACCESO (.form-container) */
 .form-container {
     background-color: #ffffff;
-    padding: 35px 40px;
+    padding: 30px 40px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(92, 64, 51, 0.08);
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     box-sizing: border-box;
     margin: 0 auto 30px auto;
-    /* Centrado y con margen inferior */
+    height: max-content;  /* Fuerza a la tarjeta a medir solo lo que mida su contenido */
+    align-self: center;   /* Evita que el Grid la estire verticalmente de golpe */
 }
 
 .form-container h3 {
