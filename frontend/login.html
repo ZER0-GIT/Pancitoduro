@@ -1,49 +1,57 @@
 <!doctype html>
-<html lans="es">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Inico</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión | PancitoDuro</title>
   <link rel="stylesheet" href="resources/style/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body class="login-body">
   <span class="abeja-animada">🐝</span>
   <header>
-    <img src="resources/image/logo.png" alt="logo">
-    <h1>Pancitoduro</h1>
+    <img src="resources/image/logo.png" alt="Logo de PancitoDuro">
+    <h1>PancitoDuro</h1>
     <p class="linetag">Horneado con corazón, rescatado con propósito</p>
   </header>
-  <div class="form-container">
-    <h3>Bienvenido de Vuelta</h3>
-    <p>Ingresa a tu cuenta de artesano</p>
-
-    <form action="index.html" method="post">
-      <label for="Usuario">Usuario</label>
-      <div class="input-group">
-        <i class="fa-solid fa-user icon"></i>
-        <input type="text" id="Usuario" name="Usuario" placeholder="Nombre de Usuario" required />
-      </div>
-
-      <label for="Contraseña">Contraseña</label>
-      <div class="input-group">
-        <i class="fa-solid fa-lock icon"></i>
-        <input type="password" id="Contraseña" name="Contraseña" required />
-      </div>
-
-      <input type="checkbox" id="mensaje" name="mensaje" />
-      <label> Recordarme en este dispositivo</label>
-
-      <button type="submit">Ingresar</button>
-
-      <a href="registrar.html">Nuevo Usuario</a>
-    </form>
-  </div>
+  <main>
+    <div class="form-container">
+      <h3>Bienvenido de vuelta</h3>
+      <p>Ingresa a tu cuenta</p>
+      <form id="loginForm">
+        <label for="correo">Correo electrónico</label>
+        <div class="input-group">
+          <i class="fa-solid fa-envelope icon"></i>
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="correo@ejemplo.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+        <label for="password">Contraseña</label>
+        <div class="input-group">
+          <i class="fa-solid fa-lock icon"></i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+        <div id="mensajeLogin" aria-live="polite"></div>
+        <button type="submit" id="btnLogin">Ingresar</button>
+        <a href="registrar.html">Nuevo Usuario</a>
+      </form>
+    </div>
+  </main>
   <footer class="footer-site">
     <div class="footer-brand">
       <strong>PancitoDuro</strong>
-      <p>© 2026 PancitoDuro Panaderia Artesanal. Horneado con corazón, rescatado con propósito.</p>
+      <p>© 2026 PancitoDuro Panadería Artesanal. Horneado con corazón, rescatado con propósito.</p>
     </div>
     <div class="footer-links">
       <a href="#">Sostenibilidad</a>
@@ -52,6 +60,6 @@
       <a href="#">Privacidad</a>
     </div>
   </footer>
-  <script src="/frontend/resources/js/login.js"></script>
+  <script src="resources/js/login.js"></script>
 </body>
 </html>

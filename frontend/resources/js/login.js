@@ -1,34 +1,93 @@
+const API_URL = "https://api.pancitoduro.cafe";
+
 window.addEventListener("DOMContentLoaded", () => {
-    const formularioLogin = document.querySelector("form");
+    const formularioLogin = document.getElementById("loginForm");
+    const correoInput = document.getElementById("correo");
+    const passwordInput = document.getElementById("password");
+    const botonLogin = document.getElementById("btnLogin");
+    const mensajeLogin = document.getElementById("mensajeLogin");
 
-    if (formularioLogin) {
-        formularioLogin.addEventListener("submit", (event) => {
-            // Captura de datos usando los IDs de tu login.html ("Usuario" y "Contraseña")
-            const usuarioInput = document.getElementById("Usuario").value.trim();
-            const contrasenaInput = document.getElementById("Contraseña").value;
+    formularioLogin.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-            if (usuarioInput === "" || contrasenaInput === "") {
-                alert("Por favor, rellene todos los campos.");
-                event.preventDefault();
+        const correo = correoInput.value.trim();
+        const password = passwordInput.value;
+
+        limpiarMensaje();
+
+        if (correo === "" || password === "") {
+            mostrarMensaje("Por favor, completa todos los campos.", "error");
+            return;
+        }
+
+        bloquearFormulario(true);
+
+        try {
+            const response = await fetch(`${API_URL}/api/auth/login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                credentials: "include",
+                body: JSON.stringify({
+                    correo,
+                    password
+                })
+            });
+
+            const data = await obtenerRespuestaJSON(response);
+
+            if (!response.ok) {
+                mostrarMensaje(
+                    data?.mensaje || "Correo o contraseña incorrectos.",
+                    "error"
+                );
+
+                bloquearFormulario(false);
                 return;
             }
 
-            // === CONSULTA DINÁMICA A LA BASE DE DATOS LOCAL ===
-            // Jalamos la lista de usuarios creados en la página de registro
-            const usuariosBD = JSON.parse(localStorage.getItem("usuarios_pancitoduro")) || [];
-
-            // Buscamos si hay algún usuario cuyo correo o nombre coincida con lo ingresado
-            const usuarioEncontrado = usuariosBD.find(u => 
-                (u.nombre_usuario === usuarioInput || u.email === usuarioInput) && u.contrasena === contrasenaInput
+            mostrarMensaje(
+                `Bienvenido, ${data.usuario.nombre}.`,
+                "exito"
             );
 
-            if (usuarioEncontrado) {
-                alert(`¡Acceso concedido! Bienvenido/a de vuelta, ${usuarioEncontrado.nombre_usuario}.`);
-                // Aquí el formulario continuará su curso hacia index.html de manera dinámica
-            } else {
-                alert("Error: Usuario o contraseña incorrectos. Verifique sus datos.");
-                event.preventDefault(); // Detiene el ingreso si los datos no existen en la BD
-            }
-        });
+            window.location.href = "index.html";
+
+        } catch (error) {
+            console.error("Error al iniciar sesión:", error);
+
+            mostrarMensaje(
+                "No se pudo conectar con el servidor.",
+                "error"
+            );
+
+            bloquearFormulario(false);
+        }
+    });
+
+    async function obtenerRespuestaJSON(response) {
+        try {
+            return await response.json();
+        } catch {
+            return null;
+        }
+    }
+
+    function mostrarMensaje(mensaje, tipo) {
+        mensajeLogin.textContent = mensaje;
+        mensajeLogin.className = tipo;
+    }
+
+    function limpiarMensaje() {
+        mensajeLogin.textContent = "";
+        mensajeLogin.className = "";
+    }
+
+    function bloquearFormulario(bloquear) {
+        botonLogin.disabled = bloquear;
+        botonLogin.textContent = bloquear
+            ? "Ingresando..."
+            : "Ingresar";
     }
 });

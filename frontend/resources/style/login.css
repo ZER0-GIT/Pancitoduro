@@ -135,7 +135,7 @@ form label {
     pointer-events: none;
 }
 
-.form-container input[type="text"],
+.form-container input[type="email"],
 .form-container input[type="password"] {
     width: 100%;
     padding: 12px 15px 12px 42px;
