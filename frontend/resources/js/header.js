@@ -69,8 +69,6 @@ window.addEventListener("DOMContentLoaded", async () => {
             </button>
         `;
 
-        actualizarCantidadCarrito();
-
         document
             .getElementById("btnCerrarSesion")
             .addEventListener(
