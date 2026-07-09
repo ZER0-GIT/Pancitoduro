@@ -1,5 +1,3 @@
-const API_URL = "http://127.0.0.1:8080";
-
 window.addEventListener("DOMContentLoaded", () => {
     const formularioLogin = document.getElementById("loginForm");
     const correoInput = document.getElementById("correo");
