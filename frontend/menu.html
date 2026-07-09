@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PancitoDuro - Menu</title>
+    <title>PancitoDuro - Menú</title>
     <link rel="stylesheet" href="resources/style/menu.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
 </head>
-
 <body>
     <header class="header">
         <div class="logoContainer">
@@ -25,197 +23,42 @@
                 <li><a href="ofertas.html">Ofertas</a></li>
             </ul>
         </nav>
-        <div class="btnContainer">
+        <div class="btnContainer" id="headerUsuario">
             <div class="btnLogin">
                 <a href="login.html">Iniciar sesión</a>
             </div>
+
             <div class="btnRegister">
                 <a href="registrar.html">Registrarse</a>
             </div>
         </div>
     </header>
+
     <main>
         <section class="menuArtesanal">
-            <section class="menuPromociones">
-                <h3>Productos en Promoción</h3>
-                <table class="tablaMenu">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Precio Normal</th>
-                        <th>Oferta</th>
-                        <th>Acción</th>
-                    </tr>
-                    <tr>
-                        <td>Croissant artesanal</td>
-                        <td>Masa hojaldrada con mantequilla francesa</td>
-                        <td>S/. 8.00</td>
-                        <td>S/. 5.50</td>
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Pan de masa madre</td>
-                        <td>Fermentación lenta y corteza crocante</td>
-                        <td>S/. 14.00</td>
-                        <td>S/. 10.00</td>
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Rollos de canela</td>
-                        <td>Canela premium y glaseado artesanal</td>
-                        <td>S/. 12.00</td>
-                        <td>S/. 8.50</td>
+            <h2>Nuestro Menú Artesanal</h2>
+            <p id="mensajeMenu">Cargando productos...</p>
 
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </section>
-            <section class="menuProductos">
-                <h3>Nuestros Productos</h3>
-                <table class="tablaMenu">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Acción</th>
-                    </tr>
-                    <tr>
-                        <td>Focaccia italiana</td>
-                        <td>Aceite de oliva y romero fresco</td>
-                        <td>S/. 12.00</td>
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bagel artesanal</td>
-                        <td>Receta tradicional estilo neoyorquino</td>
-                        <td>S/. 6.50</td>
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Pretzel alemán</td>
-                        <td>Textura suave y acabado salado</td>
-                        <td>S/. 7.00</td>
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </section>
-            <section class="menuEspeciales">
-                <h3>Especiales</h3>
-                <table class="tablaMenu">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Acción</th>
-                    </tr>
-                    <tr>
-                        <td>Brioche premium</td>
-                        <td>Masa suave con mantequilla y leche fresca</td>
-                        <td>S/. 18.00</td>
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Ciabatta rústica</td>
-                        <td>Corteza crocante y miga aireada</td>
-                        <td>S/. 15.00</td>
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </section>
-            <section class="menuBebidas">
-                <h3>Bebidas</h3>
-                <table class="tablaMenu">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Acción</th>
-                    </tr>
-                    <tr>
-                        <td>Café americano</td>
-                        <td>Café orgánico tostado artesanalmente</td>
-                        <td>S/. 5.00</td>
-
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Chocolate caliente</td>
-                        <td>Cacao artesanal con leche fresca</td>
-                        <td>S/. 7.00</td>
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Té de frutos rojos</td>
-                        <td>Infusión natural de frutos del bosque</td>
-                        <td>S/. 6.00</td>
-                        <td class="accionCarrito">
-                            <a href="form_pedido.html">
-                                <img src="resources/icon/addCarrito.svg" alt="Añadir al carrito">
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </section>
+            <!-- Aquí JavaScript generará las categorías y sus productos -->
+            <div id="contenedorCategorias"></div>
         </section>
     </main>
+
     <footer>
         <div class="footerContainer">
             <div class="ubicacion">
                 <h3 class="tituloFooter">Contacto</h3>
-                <p>Encuentranos en: Av. Independencia #123, Arequipa, Perú.</p>
-                <p><a href="https://www.google.com/maps/place/Calle+Principal+%23123,+Ciudad,+Pa%C3%ADs">Ver en Google
-                        Maps</a></p>
+                <p>Encuéntranos en: Av. Independencia #123, Arequipa, Perú.</p>
             </div>
+
             <div class="contacto">
                 <h3 class="tituloFooter">Contacto</h3>
                 <ul>
                     <li>Teléfono: (054) 34567890</li>
                     <li>Correo: correo@pancitoduro.com</li>
-                    <li><a href="https://www.facebook.com/pancitoduro">Facebook</a></li>
-                    <li><a href="https://www.instagram.com/pancitoduro">Instagram</a></li>
-                    <li><a href="https://www.twitter.com/pancitoduro">Twitter</a></li>
                 </ul>
             </div>
+
             <div class="legal">
                 <h3 class="tituloFooter">Legal</h3>
                 <ul>
@@ -225,10 +68,14 @@
                 </ul>
             </div>
         </div>
+
         <div class="copyright">
             <p>&copy; 2026 PancitoDuro. Todos los derechos reservados.</p>
         </div>
     </footer>
-</body>
 
+    <script src="resources/js/config.js"></script>
+    <script src="resources/js/header.js"></script>
+    <script src="resources/js/menu.js"></script>
+</body>
 </html>

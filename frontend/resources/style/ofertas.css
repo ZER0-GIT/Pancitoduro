@@ -57,12 +57,14 @@ nav a{
     gap: .8rem;
 }
 .btnLogin,
-.btnRegister{
+.btnRegister,
+.btnCerrarSesion{
     border-radius: 8px;
     overflow: hidden;
     transition: .25s;
 }
-.btnLogin{
+.btnLogin,
+.btnCerrarSesion{
     border: 2px solid #B98661;
     background: transparent;
 }
@@ -70,21 +72,25 @@ nav a{
     background-color: #B98661;
 }
 .btnLogin a,
-.btnRegister a{
+.btnRegister a,
+.btnCerrarSesion{
     display: block;
     padding: .75rem 1.3rem;
     font-weight: 600;
 }
-.btnLogin a{
+.btnLogin a,
+.btnCerrarSesion a{
     color: #B98661;
 }
 .btnRegister a{
     color: #FFFFFF;
 }
-.btnLogin:hover{
+.btnLogin:hover,
+.btnCerrarSesion:hover{
     background-color: #B98661;
 }
-.btnLogin:hover a{
+.btnLogin:hover a,
+.btnCerrarSesion:hover a{
     color: #FFFFFF;
 }
 .btnRegister:hover{

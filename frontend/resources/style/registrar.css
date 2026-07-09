@@ -100,6 +100,7 @@ form label {
 }
 
 .form-container input[type="text"],
+.form-container input[type="tel"],
 .form-container input[type="email"],
 .form-container input[type="password"] {
     width: 100%;
