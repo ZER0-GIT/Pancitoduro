@@ -1,12 +1,20 @@
 /* GLOBAL */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #FDFCF0;
+body{
 
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    margin:0;
+
+    padding:0;
+
+    font-family:Arial,sans-serif;
+
+    background:#FDFCF0;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 /* HEADER */
 header{
@@ -116,6 +124,11 @@ nav a{
     }
 }
 /* MAIN */
+main{
+
+    flex:1;
+
+}
 .pedidosRealizados{
     padding: 30px;
     background-color: #F5F0E6;
@@ -127,53 +140,190 @@ nav a{
     font-size: 36px;
 }
 
+/*==============================
+TABLA PEDIDOS
+==============================*/
+
 .tablaPedidos{
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #F9F7E7;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    width:100%;
+
+    border-collapse:separate;
+
+    border-spacing:0;
+
+    background:#F9F7E7;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
 }
 
-.tablaPedidos th{
-    padding: 18px;
-    background-color: #D5A46B;
-    color: white;
-    text-align: left;
-    font-size: 18px;
+.tablaPedidos thead th{
+
+    background:#D5A46B;
+
+    color:white;
+
+    padding:18px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    text-align:left;
+
 }
 
-.tablaPedidos td{
-    padding: 18px;
-    border-bottom: 1px solid #ECECEC;
-    font-size: 16px;
-    color: #333333;
-    vertical-align: top;
+.tablaPedidos tbody td{
+
+    padding:18px;
+
+    border-bottom:1px solid #ECECEC;
+
+    color:#333;
+
+    font-size:15px;
+
+    background:white;
+
+    transition:.2s;
+
 }
 
-.tablaPedidos tr:last-child td{
-    border-bottom: none;
+.tablaPedidos tbody tr:hover td{
+
+    background:#FAF6EF;
+
 }
 
-.tablaPedidos tr:hover{
-    background-color: #FAF6EF;
+.tablaPedidos tbody tr:last-child td{
+
+    border-bottom:none;
+
 }
+
+/*==============================
+COLUMNAS
+==============================*/
+
+.colExpandir{
+
+    width:45px;
+
+}
+
+.colPedido{
+
+    width:110px;
+
+}
+
+.colFecha{
+
+    width:190px;
+
+}
+
+.colTotal{
+
+    width:120px;
+
+    text-align:center;
+
+}
+
+.colEstado{
+
+    width:160px;
+
+    text-align:center;
+
+}
+
+/*==============================
+BOTÓN EXPANDIR
+==============================*/
+
+.expandir{
+
+    width:40px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#8B5E3C;
+
+    transition:.25s;
+
+    user-select:none;
+
+}
+
+.filaPedido:hover .expandir{
+
+    color:#C27B31;
+
+}
+
+/*==============================
+ESTADOS
+==============================*/
 
 .estadoProceso{
-    padding: 6px 12px;
-    background-color: #FFE7B3;
-    color: #9B6B00;
-    border-radius: 20px;
-    font-weight: bold;
+
+    display:inline-block;
+
+    padding:7px 15px;
+
+    background:#FFE7B3;
+
+    color:#9B6B00;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
 }
 
 .estadoEntregado{
-    padding: 6px 12px;
-    background-color: #D8F5D0;
-    color: #2E7D32;
-    border-radius: 20px;
-    font-weight: bold;
+
+    display:inline-block;
+
+    padding:7px 15px;
+
+    background:#D8F5D0;
+
+    color:#2E7D32;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+}
+
+.estadoCancelado{
+
+    display:inline-block;
+
+    padding:7px 15px;
+
+    background:#FFD7D7;
+
+    color:#B42318;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
 }
 /* FOOTER*/
 footer{
@@ -202,4 +352,200 @@ footer .copyright{
 footer a{
     text-decoration: none;
     color: #B78922;
+}
+/*==============================
+FILAS
+==============================*/
+
+.filaPedido{
+
+    cursor:pointer;
+
+}
+
+.filaDetalle{
+
+    display:none;
+
+}
+
+.filaDetalle td{
+
+    background:#FCFAF3;
+
+    padding:0;
+
+}
+/*==================================
+DETALLE DEL PEDIDO
+==================================*/
+
+.filaDetalle td{
+
+    padding:0 !important;
+
+    background:#FCFAF3;
+
+}
+
+.detallePedido{
+
+    padding:28px;
+
+    background:#FCFAF3;
+
+    border-left:6px solid #D5A46B;
+
+}
+
+.detallePedido h3{
+
+    margin:0 0 25px;
+
+    color:#6F4627;
+
+    font-size:24px;
+
+    font-family: Newsreader, serif;
+
+}
+
+.detallePedido h4{
+
+    margin:30px 0 15px;
+
+    color:#6F4627;
+
+    font-size:20px;
+
+    font-family: Newsreader, serif;
+
+}
+.detalleGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.detalleGrid div{
+
+    background:white;
+
+    padding:15px 18px;
+
+    border-radius:12px;
+
+    border:1px solid #ECE6D7;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.detalleGrid strong{
+
+    color:#A86F2D;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+}
+
+.detalleGrid span{
+
+    color:#333;
+
+    font-size:15px;
+
+    line-height:1.5;
+
+}
+.tablaDetalleProductos{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    margin-top:10px;
+
+}
+
+.tablaDetalleProductos th{
+
+    background:#D5A46B;
+
+    color:white;
+
+    padding:14px;
+
+    text-align:left;
+
+    font-size:15px;
+
+}
+
+.tablaDetalleProductos td{
+
+    padding:14px;
+
+    border-bottom:1px solid #ECECEC;
+
+    font-size:15px;
+
+}
+
+.tablaDetalleProductos tbody tr:hover{
+
+    background:#FAF6EF;
+
+}
+
+.tablaDetalleProductos tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+.filaPedido{
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.filaPedido:hover td{
+
+    background:#FAF6EF;
+
+}
+@media(max-width:900px){
+
+    .detalleGrid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+.tablaPedidos thead th:nth-child(5),
+.tablaPedidos thead th:nth-child(6){
+
+    text-align:center;
+
 }

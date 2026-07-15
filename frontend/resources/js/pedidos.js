@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     const listaPedidos = document.getElementById("listaPedidos");
     const mensajePedidos = document.getElementById("mensajePedidos");
     const tablaPedidos = document.getElementById("tablaPedidos");
+    let detalleAbierto = null;
 
     /*
      * ==========================
@@ -57,7 +58,6 @@ window.addEventListener("DOMContentLoaded", async () => {
             }
 
             const pedidos = await response.json();
-
             mostrarPedidos(pedidos);
 
         } catch (error) {
@@ -77,61 +77,306 @@ window.addEventListener("DOMContentLoaded", async () => {
      */
 
     function mostrarPedidos(pedidos) {
+
         listaPedidos.innerHTML = "";
 
         if (!Array.isArray(pedidos) || pedidos.length === 0) {
+
             tablaPedidos.style.display = "none";
 
             mensajePedidos.textContent =
                 "Todavía no has realizado ningún pedido.";
 
             return;
+
         }
 
         tablaPedidos.style.display = "table";
+
         mensajePedidos.textContent = "";
 
         pedidos.forEach(pedido => {
-            const fila = document.createElement("tr");
 
-            const productos = crearTextoProductos(
-                pedido.detalles
-            );
+            const filaPedido = document.createElement("tr");
+
+            filaPedido.className = "filaPedido";
 
             const estado = formatearEstado(
                 pedido.estado
             );
 
-            const claseEstado = obtenerClaseEstado(
-                pedido.estado
-            );
+            const claseEstado =
+                obtenerClaseEstado(
+                    pedido.estado
+                );
 
-            fila.innerHTML = `
-                <td>
+            filaPedido.innerHTML = `
+
+                <td class="expandir">
+
+                    ▶
+
+                </td>
+
+                <td class="colPedido">
+
                     #${pedido.id}
+
                 </td>
 
-                <td>
-                    ${pedido.usuarioNombre}
+                <td class="colFecha">
+
+                    ${formatearFecha(
+                        pedido.fechaPedido
+                    )}
+
                 </td>
 
-                <td>
-                    ${productos}
+                <td class="colTotal">
+
+                    S/ ${Number(
+                        pedido.total
+                    ).toFixed(2)}
+
                 </td>
 
-                <td>
-                    S/ ${Number(pedido.total).toFixed(2)}
-                </td>
+                <td class="colEstado">
 
-                <td>
                     <span class="${claseEstado}">
+
                         ${estado}
+
                     </span>
+
                 </td>
+
             `;
 
-            listaPedidos.appendChild(fila);
+            const filaDetalle =
+                document.createElement("tr");
+
+            filaDetalle.className =
+                "filaDetalle";
+
+            filaDetalle.style.display =
+                "none";
+
+            filaDetalle.innerHTML = `
+
+            <td colspan="5">
+
+            <div class="detallePedido">
+
+                <h3>
+
+                    Información del Pedido
+
+                </h3>
+
+                <div class="detalleGrid">
+
+                    <div>
+
+                        <strong>Fecha</strong>
+
+                        <span>
+
+                            ${formatearFechaHora(
+                                pedido.fechaPedido
+                            )}
+
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Dirección</strong>
+
+                        <span>
+
+                            ${pedido.direccionEntrega}
+
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Teléfono</strong>
+
+                        <span>
+
+                            ${pedido.telefonoContacto}
+
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Método de Pago</strong>
+
+                        <span>
+
+                            ${formatearMetodoPago(
+                                pedido.metodoPago
+                            )}
+
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Estado del Pago</strong>
+
+                        <span>
+
+                            ${formatearEstadoPago(
+                                pedido.estadoPago
+                            )}
+
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Observaciones</strong>
+
+                        <span>
+
+                            ${pedido.observaciones || "Sin observaciones"}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <h4>
+
+                    Productos
+
+                </h4>
+
+                <table class="tablaDetalleProductos">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Producto</th>
+
+                            <th>Cant.</th>
+
+                            <th>Precio</th>
+
+                            <th>Subtotal</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        ${pedido.detalles.map(detalle=>`
+
+                        <tr>
+
+                            <td>
+
+                                ${detalle.productoNombre}
+
+                            </td>
+
+                            <td>
+
+                                ${detalle.cantidad}
+
+                            </td>
+
+                            <td>
+
+                                S/ ${Number(
+                                    detalle.precioUnitario
+                                ).toFixed(2)}
+
+                            </td>
+
+                            <td>
+
+                                S/ ${Number(
+                                    detalle.subtotal
+                                ).toFixed(2)}
+
+                            </td>
+
+                        </tr>
+
+                        `).join("")}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            </td>
+
+            `;
+
+            listaPedidos.appendChild(
+                filaPedido
+            );
+
+            listaPedidos.appendChild(
+                filaDetalle
+            );
+
+            filaPedido.addEventListener("click", () => {
+
+                // Si ya hay otro abierto, cerrarlo
+
+                if (detalleAbierto && detalleAbierto !== filaDetalle) {
+
+                    detalleAbierto.style.display = "none";
+
+                    detalleAbierto.previousElementSibling
+                        .querySelector(".expandir")
+                        .textContent = "▶";
+
+                }
+
+                // Abrir / cerrar el actual
+
+                if (filaDetalle.style.display === "table-row") {
+
+                    filaDetalle.style.display = "none";
+
+                    filaPedido
+                        .querySelector(".expandir")
+                        .textContent = "▶";
+
+                    detalleAbierto = null;
+
+                } else {
+
+                    filaDetalle.style.display = "table-row";
+
+                    filaPedido
+                        .querySelector(".expandir")
+                        .textContent = "▼";
+
+                    detalleAbierto = filaDetalle;
+
+                }
+
+            });
+
         });
+
     }
 
     /*
@@ -154,6 +399,21 @@ window.addEventListener("DOMContentLoaded", async () => {
             })
             .join("<br>");
     }
+    
+    function formatearFecha(fecha) {
+
+    const fechaPedido = new Date(fecha);
+
+    return fechaPedido.toLocaleDateString(
+        "es-PE",
+        {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+        }
+    );
+
+}
 
     /*
      * ==========================
@@ -171,6 +431,60 @@ window.addEventListener("DOMContentLoaded", async () => {
         };
 
         return estados[estado] || estado;
+    }
+    function formatearMetodoPago(metodo) {
+
+        const metodos = {
+
+            TARJETA: "Tarjeta",
+
+            YAPE_PLIN: "Yape / Plin",
+
+            EFECTIVO: "Efectivo"
+
+        };
+
+        return metodos[metodo] || metodo;
+
+    }
+
+    function formatearEstadoPago(estado) {
+
+        const estados = {
+
+            PAGADO: "Pagado",
+
+            PENDIENTE: "Pendiente",
+
+            RECHAZADO: "Rechazado"
+
+        };
+
+        return estados[estado] || estado;
+
+    }
+    function formatearFechaHora(fecha){
+
+        return new Date(fecha).toLocaleString(
+
+            "es-PE",
+
+            {
+
+                day:"2-digit",
+
+                month:"2-digit",
+
+                year:"numeric",
+
+                hour:"2-digit",
+
+                minute:"2-digit"
+
+            }
+
+        );
+
     }
 
     /*
