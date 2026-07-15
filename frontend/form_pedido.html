@@ -5,6 +5,8 @@
     <title>Formulario Pedido</title>
     <link rel="stylesheet" href="resources/style/form_pedido.css">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 </head>
 <body>
 <header class="header">
@@ -167,47 +169,24 @@
             </div>
 
         </div>
-
-        <div class="card card-status">
-
-            <div class="status-header">
-
-                <span>NIVEL DE FRESCURA</span>
-
-                <span class="status-highlight">
-                    Excelente
-                </span>
-
-            </div>
-
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
-
-            <p class="status-desc">
-                Tu pedido será preparado con productos
-                horneados hace menos de 4 horas.
-            </p>
-
-        </div>
-
-        <div class="card card-impact">
-
-            <div class="impact-content">
-
-                <div class="impact-text">
-
-                    <h4>Impacto de tu Pedido</h4>
-
-                    <p>
-                        Al elegir PancitoDuro ayudas a reducir
-                        el desperdicio alimentario.
-                    </p>
-
+            <div class="card card-map">
+                <div class="card-body">
+                    <span class="badge">UBICACIÓN</span>
+                    <h3>Mapa del Pedido</h3>
+                    <p class="map-description">Selecciona la dirección de entrega y visualiza el recorrido desde PancitoDuro.</p>
+                    <div id="mapaPedido"></div>
+                    <div class="map-footer">
+                        <div class="legend-item">
+                            <span class="legend-dot tienda"></span>
+                            <span>PancitoDuro</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot cliente"></span>
+                            <span>Destino</span>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </div>
 
     </aside>
@@ -276,6 +255,7 @@
     </div>
 
 </footer>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="resources/js/config.js"></script>
 <script src="resources/js/header.js"></script>
 <script src="resources/js/form_pedido.js"></script>

@@ -2,6 +2,30 @@ let productos = [];
 let ofertas = [];
 let usuarioActual = null;
 
+const LAT_TIENDA = -16.4089687473831;
+const LNG_TIENDA = -71.54054668685478;
+let mapa;
+let marcadorTienda;
+let marcadorCliente = null;
+let rutaActual = null;
+const iconoTienda = L.icon({
+    iconUrl: "resources/image/marker-icon-red.png",
+    shadowUrl: "resources/image/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+const iconoCliente = L.icon({
+    iconUrl: "resources/image/marker-icon-green.png",
+    shadowUrl: "resources/image/marker-shadow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
 window.addEventListener("DOMContentLoaded", async () => {
     const formulario = document.getElementById("form-pedido");
     const listaProductos = document.getElementById("lista-productos");
@@ -715,4 +739,173 @@ Total pagado: S/ ${Number(data.total).toFixed(2)}`
             <p>No se pudo cargar el carrito.</p>
         `;
     }
+    inicializarMapa();
+    document.getElementById("direccion").addEventListener("blur",buscarDireccionCliente);
+
 });
+function inicializarMapa() {
+
+    mapa = L.map("mapaPedido");
+
+    mapa.setView(
+        [LAT_TIENDA, LNG_TIENDA],
+        16
+    );
+
+    L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            maxZoom: 19,
+            attribution: "&copy; OpenStreetMap"
+        }
+    ).addTo(mapa);
+
+    marcadorTienda = L.marker(
+        [LAT_TIENDA, LNG_TIENDA],
+        {
+            icon: iconoTienda
+        }
+    ).addTo(mapa);
+
+    marcadorTienda.bindPopup(
+        "<strong>PancitoDuro</strong><br>Tienda Principal"
+    );
+
+    marcadorTienda.openPopup();
+}
+async function buscarDireccionCliente() {
+
+    const inputDireccion =
+        document.getElementById("direccion");
+
+    const direccion =
+        inputDireccion.value.trim();
+
+    if (direccion === "") return;
+
+    try {
+
+        const response = await fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(direccion + ", Arequipa, Perú")}`
+        );
+
+        const resultados = await response.json();
+
+        if (resultados.length === 0) {
+
+            alert("No se encontró la dirección.");
+
+            return;
+
+        }
+
+        const lat = parseFloat(resultados[0].lat);
+        const lon = parseFloat(resultados[0].lon);
+
+        // Eliminar marcador anterior
+
+        if (marcadorCliente) {
+
+            mapa.removeLayer(marcadorCliente);
+
+        }
+
+        marcadorCliente = L.marker(
+            [lat, lon],
+            {
+                icon: iconoCliente
+            }
+        ).addTo(mapa);
+        await dibujarRuta(lat, lon);
+
+        // Ajustar vista para mostrar ambos puntos
+
+        const grupo = L.featureGroup([
+            marcadorTienda,
+            marcadorCliente,
+            rutaActual
+        ]);
+
+        mapa.fitBounds(
+            grupo.getBounds(),
+            {
+                padding: [50, 50]
+            }
+        );
+
+    }
+    catch (error) {
+
+        console.error(error);
+
+        alert("No se pudo buscar la dirección.");
+
+    }
+
+}
+async function dibujarRuta(latDestino, lonDestino) {
+
+    try {
+
+        const response = await fetch(
+            "https://api.openrouteservice.org/v2/directions/driving-car/geojson",
+            {
+
+                method: "POST",
+
+                headers: {
+
+                    "Authorization": ORS_API_KEY,
+
+                    "Content-Type": "application/json"
+
+                },
+
+                body: JSON.stringify({
+
+                    coordinates: [
+
+                        [LNG_TIENDA, LAT_TIENDA],
+
+                        [lonDestino, latDestino]
+
+                    ]
+
+                })
+
+            }
+
+        );
+
+        const geojson = await response.json();
+
+        if (rutaActual) {
+
+            mapa.removeLayer(rutaActual);
+
+        }
+
+        rutaActual = L.geoJSON(
+            geojson,
+            {
+
+                style: {
+
+                    color: "#B37A35",
+
+                    weight: 5
+
+                }
+
+            }
+
+        ).addTo(mapa);
+
+    }
+    catch(error){
+
+        console.error(error);
+
+    }
+
+}
