@@ -110,6 +110,191 @@ nav a {
 .btnRegister:hover {
     background-color: #9F704F;
 }
+/*==================================
+HEADER USUARIO
+==================================*/
+
+.headerPerfil{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+/*--------------------------------*/
+
+.headerNombreUsuario{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:8px 16px;
+
+    background:#F7F3EA;
+
+    border:1px solid #E6D9C8;
+
+    border-radius:30px;
+
+    color:#5D4200;
+
+    font-family:"Plus Jakarta Sans",sans-serif;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.headerNombreUsuario:hover{
+
+    background:#EFE7DA;
+
+}
+
+/*--------------------------------*/
+
+.headerIconoUsuario{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    background:#D5A46B;
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+/*--------------------------------*/
+
+.headerCarrito{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:12px;
+
+    background:#FFF7ED;
+
+    border:2px solid #E8D6BE;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    transition:.25s;
+
+}
+
+.headerCarrito:hover{
+
+    background:#D5A46B;
+
+    transform:translateY(-2px) scale(1.05);
+
+}
+
+/* El emoji cambia ligeramente de color al pasar el mouse */
+
+.headerCarrito:hover{
+
+    filter:saturate(1.2);
+
+}
+
+/*--------------------------------*/
+
+.btnCerrarSesion{
+
+    padding:11px 18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#B98661;
+
+    color:white;
+
+    font-family:"Plus Jakarta Sans",sans-serif;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.btnCerrarSesion:hover{
+
+    background:#9F704F;
+
+    transform:translateY(-2px);
+
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:768px){
+
+    .headerPerfil{
+
+        flex-direction:column;
+
+        width:100%;
+
+        gap:10px;
+
+    }
+
+    .headerNombreUsuario{
+
+        width:100%;
+
+        justify-content:center;
+
+        box-sizing:border-box;
+
+    }
+
+    .btnCerrarSesion{
+
+        width:100%;
+
+    }
+
+}
 
 /* MAIN */
 .main-layout {
